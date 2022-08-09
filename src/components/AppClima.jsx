@@ -1,14 +1,26 @@
 
 import Formulario from "./Formulario"
+import Resultado from "./Resultado"
+import useClima from "../hooks/useClima"
+import Spinner from "./Spinner"
 
 const AppClima = () => {
-  return (
-    <>
-        <main className = "dos-columnas">
-            <Formulario />
-        </main>
-    </>
-  )
+
+    const {resultado, cargando, noResultado} = useClima()
+
+    return (
+        <>
+            <main className = "dos-columnas">
+                <Formulario />
+
+                { 
+                    cargando ? <Spinner /> :
+                        resultado?.name ? <Resultado /> :
+                            noResultado ? <p>No hay resultados</p> : <p>Busca una Ciudad</p>
+                }
+            </main>
+        </>
+    )
 }
 
 export default AppClima
