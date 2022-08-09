@@ -1,10 +1,13 @@
 
+import Formulario from "./Formulario"
 
 const AppClima = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+        <main className = "dos-columnas">
+            <Formulario />
+        </main>
+    </>
   )
 }
 
