@@ -1,0 +1,2 @@
+[context.production]
+environment = { VITE_API_KEY = 8f584339a099e7a39ee02e17c577ff26 }
